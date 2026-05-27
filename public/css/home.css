@@ -381,6 +381,9 @@
 .mega-item:hover .mega-item-title {
   color: var(--accent-light);
 }
+[data-theme="light"] .mega-item:hover .mega-item-title {
+  color: #111111 !important; 
+}
 
 /* Dropdown CTA Banner */
 .mega-cta {
