@@ -418,7 +418,11 @@ app.post('/api/auth/register', registerLimiter, async (req, res) => {
     const token = generateToken({ id: newUserId, name, username: finalUsername });
     setAuthCookie(res, token);
 
-    res.status(201).json({ id: newUserId, name, email: email.toLowerCase(), username: finalUsername });
+    return res.status(201).json({ 
+  message: "Registration successful", 
+  name, 
+  username: finalUsername 
+});
   } catch (err) {
     console.error('Register error:', err);
     res.status(500).json({ error: 'Server error. Please try again.' });
@@ -450,7 +454,7 @@ app.post('/api/auth/login', loginLimiter, async (req, res) => {
     const token = generateToken({ id: user.id, name: user.name, username: user.username });
     setAuthCookie(res, token);
 
-    res.json({ id: user.id, name: user.name, email: user.email, username: user.username });
+    return res.json({ message: "Login successful", name: user.name, username: user.username });
   } catch (err) {
     console.error('Login error:', err);
     res.status(500).json({ error: 'Server error. Please try again.' });
