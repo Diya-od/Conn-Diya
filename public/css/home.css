@@ -1441,6 +1441,11 @@
   display: flex;
   gap: 60px;
   margin-bottom: 32px;
+  justify-content: center;
+}
+
+.footer-links-grid > div {
+  text-align: center;
 }
 
 .footer-links-grid h4 {
