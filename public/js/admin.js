@@ -308,6 +308,7 @@
           showToast('Category deleted');
           await loadCategories();
           await loadLinks();
+          reloadPreview();
         } catch (err) {
           showToast('Failed to delete category', 'error');
         }
